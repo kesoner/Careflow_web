@@ -17,10 +17,10 @@
     dialog.innerHTML = `
       <div class="film-window">
         <div class="film-topbar">
-          <div><span class="film-badge">45 秒概念影片</span><h2 id="film-title">CareFlow<span class="film-title-sep">｜</span><span class="film-title-copy">一份安排，一份安心。</span></h2></div>
+          <div><span class="film-badge">45 秒介紹影片</span><h2 id="film-title">CareFlow<span class="film-title-sep">｜</span><span class="film-title-copy">一份安排，一份安心。</span></h2></div>
           <button class="film-close" type="button" aria-label="關閉影片"><span aria-hidden="true">×</span></button>
         </div>
-        <video class="film-video" controls playsinline preload="none" aria-label="CareFlow 情緒版概念影片"></video>
+        <video class="film-video" controls playsinline preload="none" aria-label="CareFlow 介紹影片"></video>
         <div class="film-bottom"><p class="film-status" role="status" aria-live="polite"></p><a class="film-direct" target="_blank" rel="noopener">開啟原始影片 <span aria-hidden="true">↗</span></a></div>
       </div>`;
     document.body.append(dialog);

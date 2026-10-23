@@ -1,0 +1,15 @@
+/* Diagram frames keep the complete drawing visible as the story track moves. */
+.story-section .story-art{min-width:0;min-height:0;height:100%;align-self:center;justify-content:center;gap:12px}
+.story-section .story-media-window{display:grid;place-items:center;width:100%;height:auto;aspect-ratio:1;max-height:calc(100% - 28px);min-width:0;min-height:0;flex:0 1 auto;padding:4%;overflow:visible;background:#163e31;border:1px solid #d6e0c340}
+.story-section .story-panel:nth-child(even) .story-media-window{background:#163e31}
+.story-section .story-media-window img{display:block;position:static;width:100%;max-width:100%;height:100%;min-width:0;min-height:0;object-fit:contain;object-position:center;filter:none;transform:none;translate:0 0}
+.story-section .story-art>span{flex:none;color:#d6e0c3;font-size:11px;line-height:1.5;letter-spacing:.08em}
+@media(max-width:650px){
+  .story-section .story-art{height:26svh;min-height:174px;max-height:none;flex:none;gap:8px}
+  .story-section .story-media-window{height:calc(100% - 24px);max-height:none;aspect-ratio:auto;padding:2%}
+  .story-section .story-art>span{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .story-section .story-art{height:320px;min-height:0;margin-top:24px}
+  .story-section .story-media-window{height:calc(100% - 28px);max-height:none;aspect-ratio:auto}
+}

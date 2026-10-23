@@ -261,7 +261,9 @@
         });
         if(stickyTop<=headerY&&stickyTop+item.stickyHeight>=headerY){
           item.headerCovered=headerCovered/Math.max(1,item.stripes.length);
-          wipeNavTheme=item.element.dataset.wipeTheme==='dark'?'light':item.headerCovered>=.5?'dark':'light';
+          wipeNavTheme=item.headerCovered>=.5
+            ? item.element.dataset.wipeTheme==='dark'?'light':'dark'
+            : item.element.dataset.photoNavTheme||'light';
         }
         const imageProgress=clamp(time/(sceneIndex===0?1.34:1.5));
         if(item.image)item.image.style.translate=`0 ${reduced?0:(30*(1-imageProgress)).toFixed(4)}%`;
@@ -300,8 +302,8 @@
         item.element.style.setProperty('--story-progress',p.toFixed(6));
         if(!reduced)item.track.style.transform=`translate3d(${item.x.toFixed(4)}px,0,0)`;
         if(item.progressBar)item.progressBar.style.setProperty('--story-progress',p.toFixed(6));
-        const ranges=[[0,.35,-7,-20],[.1,.7,0,-20],[.44,1,0,-17],[.8,1,0,-10]];
-        item.media.forEach((media,index)=>{const r=ranges[index%4],local=clamp((p-r[0])/(r[1]-r[0]));media.style.translate=`${reduced?0:(r[2]+(r[3]-r[2])*local).toFixed(4)}% 0`;});
+        // Complete diagrams stay centred inside their frame; only the panel track travels.
+        item.media.forEach(media=>{media.style.translate='0 0';});
         const step=clamp(Math.round(p*3),0,3);
         if(item.rail){
           item.rail.style.setProperty('--story-progress',p.toFixed(6));item.rail.style.setProperty('--story-step',String(step));
