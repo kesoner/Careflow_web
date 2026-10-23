@@ -4,6 +4,6 @@
   "private":true,
   "description":"CareFlow 個人端互動產品展示，採用 Crosswalk 啟發的排版與捲動框架。",
   "type":"module",
-  "scripts":{"start":"node server.mjs","check":"node --check server.mjs && node --check dist/app.js && node --check dist/motion.js && node --check dist/demo.js"},
+  "scripts":{"start":"node server.mjs","check":"node --check server.mjs && node --check dist/app.js && node --check dist/motion.js && node --check dist/demo.js && node --check dist/film.js"},
   "engines":{"node":">=18.17"}
 }
