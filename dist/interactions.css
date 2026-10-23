@@ -1,0 +1,42 @@
+/* Interaction timings from the published Crosswalk configuration. */
+:root{--interaction-out-expo:cubic-bezier(.19,1,.22,1)}
+body.dialog-open,body.menu-open{overflow:hidden}
+
+/* team-hover and team-hover-out: 1000 ms, outExpo. The existing window clips. */
+.situation-visual{transform:scale(1);transform-origin:center;transition:transform 1000ms var(--interaction-out-expo);will-change:transform}
+.situation-card:hover .situation-visual,.situation-card:focus-visible .situation-visual{transform:scale(1.1)}
+.interactions-ready .situation-tag{transform:translate3d(-100%,0,0);transition:none;will-change:transform}
+.interactions-ready .situation-tag>*{opacity:0;transition:none}
+.interactions-ready .situation-tag.is-tag-visible{transform:translate3d(0,0,0);transition:transform 1000ms var(--interaction-out-expo)}
+.interactions-ready .situation-tag.is-tag-visible>*{opacity:1;transition:opacity 1000ms var(--interaction-out-expo) 500ms}
+
+/* JS animates the shell and backdrop independently, including their exit. */
+#detail-dialog{position:fixed;inset:0;margin:0;width:100vw;max-width:none;height:100dvh;max-height:none;padding:0;border:0;background:transparent;color:var(--ink,#282a21);overflow:hidden;box-shadow:none;overscroll-behavior:contain}
+#detail-dialog[open]{animation:none!important;transform:none}
+#detail-dialog::backdrop{background:transparent;backdrop-filter:none}
+.detail-overlay{position:absolute;inset:0;background:rgba(11,41,38,.38);backdrop-filter:blur(3px);opacity:0;touch-action:none}
+.detail-shell{position:absolute;top:0;right:0;width:min(880px,92vw);height:100%;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;background:var(--paper,#f0efe5);box-shadow:-20px 0 80px #00180b24;transform:translate3d(100%,0,0);will-change:transform;isolation:isolate;scrollbar-gutter:stable}
+.detail-shell .detail-topbar{position:sticky;top:0;z-index:3;background:var(--paper,#f0efe5)}
+.detail-shell .detail-body{min-height:calc(100dvh - 84px)}
+
+/* Published links keep their original text and arrow DOM. */
+.text-link span,.text-link:hover span{transform:none;transition:none}
+.header-cta{transition:background-color 250ms ease,color 250ms ease}
+.header-cta:hover,.header-cta:focus-visible,.cf-motion .site-header .header-cta:hover,.cf-motion .site-header .header-cta:focus-visible{background:var(--paper,#f0efe5);color:var(--forest,#145a46);font-weight:500}
+
+@media(max-width:650px){
+  .detail-shell{width:100vw;scrollbar-gutter:auto}
+  .site-header.menu-is-active{z-index:50;color:var(--ink,#282a21);background:transparent;border-bottom-color:transparent;backdrop-filter:none}
+  .site-header.menu-is-active>.wordmark,.site-header.menu-is-active>.menu-toggle{position:relative;z-index:2}
+  .menu-toggle{position:relative;z-index:2}
+  .header-links{display:none;position:fixed;inset:0;top:0;z-index:-1;width:100vw;height:100dvh;max-height:100dvh;background:var(--paper,#f0efe5);padding:125px var(--gutter,24px) 45px;border:0;overflow-y:auto;overscroll-behavior:contain;transform:translate3d(0,-100%,0);will-change:transform}
+  .header-links.is-open{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:18px}
+  .header-links>a{font-size:clamp(27px,7.5vw,42px);padding:13px 0;min-height:65px;line-height:1.4}
+  .header-links .header-cta{padding:13px 24px;font-size:20px;margin-top:25px;gap:44px;align-self:flex-start;min-height:58px}
+  .header-links>a:not(.header-cta){border-bottom:1px solid var(--line,#cfd4c8)}
+}
+@media(prefers-reduced-motion:reduce){
+  .situation-visual{transition:none;transform:none!important}
+  .interactions-ready .situation-tag,.interactions-ready .situation-tag.is-tag-visible{transform:none;transition:none!important}
+  .interactions-ready .situation-tag>*,.interactions-ready .situation-tag.is-tag-visible>*{opacity:1;transition:none!important}
+}

@@ -1,0 +1,43 @@
+{
+  "createdDate": "2026-10-23",
+  "asset": "care-moment.png",
+  "generationMode": "built-in image_gen.imagegen",
+  "useCase": "photorealistic-natural",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": "3:2"
+  },
+  "disclosure": "AI 生成的照護生活情境示意圖，人物與環境均為虛構，非真實客戶、照護紀錄或合作機構。",
+  "recommendedVisibleCaption": "AI 生成情境示意",
+  "source": "Built-in imagegen output 01a166d5-38cd-7e53-afb0-432d3fa996c4 / exec-d2f0eb72-f8fe-4537-a2f9-fb58c4ab6fc1.png",
+  "prompt": "Use case: photorealistic-natural\nAsset type: wide editorial lifestyle photograph for CareFlow, a consumer care-planning website.\nPrimary request: A Taiwanese older woman and her adult daughter sitting together by a window in a simple, airy contemporary home, calmly reviewing a tablet together. This is an ordinary autonomous daily-life moment, caring and collaborative.\nSubject: Taiwanese older woman about 70, silver-dark short hair, natural face and light oatmeal cardigan; adult daughter about 40, understated sage top. Both are at ease, gently engaged with the tablet, natural hands and posture.\nScene/backdrop: uncluttered Taiwanese apartment living room, linen curtains, pale warm walls, a small houseplant, understated wood surfaces.\nComposition/framing: 3:2 landscape editorial photograph, medium-wide view at seated eye level; both women visible from waist up, relaxed asymmetrical composition, some breathing space around them, the tablet screen turned away from camera.\nLighting/mood: soft natural window light, warm yet quiet, candid and sincere.\nColor palette: warm cream, muted forest and sage green, natural skin tones, restrained contrast.\nMaterials/textures: realistic skin texture, linen, cotton, matte wood.\nText: none.\nConstraints: no logos, no watermark, no written text, no graphics, no fake interface on tablet, no hospital or clinical equipment, no patient framing, no staged thumbs-up, no exaggerated smiles. Treat the older adult as an active decision-maker.",
+  "svgAssets": [
+    "hero-blueprint.svg",
+    "care-orbit.svg",
+    "permissions.svg",
+    "scenario-lines.svg",
+    "hero-machine.svg",
+    "final-machine.svg",
+    "records-field.svg"
+  ],
+  "svgProvenance": "Original SVG artwork created for this CareFlow website. All SVG backgrounds are transparent; line palette #D6E0C3 / #F0EFE5 / #D0DA83. No source-site machine artwork was copied.",
+  "heroModuleIds": [
+    "care-module",
+    "cost-module",
+    "fund-module",
+    "plan-module",
+    "flow-path"
+  ],
+  "svgRecommendedBackground": "#246957",
+  "heroAssembly": {
+    "asset": "hero-machine.svg",
+    "parts": 22,
+    "rotors": 8
+  },
+  "finalAssembly": {
+    "asset": "final-machine.svg",
+    "paths": 8,
+    "nodes": 12
+  }
+}

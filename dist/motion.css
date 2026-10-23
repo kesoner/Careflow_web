@@ -1,0 +1,69 @@
+/* Only successfully initialized motion may mask content. */
+.hero-curtain,.wipe-mask{display:none}
+html:not(.cf-motion) .intro-controls{display:none}
+html:not(.cf-motion) .story-section{height:auto!important;margin-top:0!important}
+html:not(.cf-motion) .story-sticky{position:relative!important;height:auto!important;overflow:visible!important}
+html:not(.cf-motion) .story-track{display:block!important;width:100%!important;margin:0!important;transform:none!important}
+html:not(.cf-motion) .story-panel{width:100%!important;height:auto!important;min-height:540px!important;min-width:0!important;padding:50px 5vw!important}
+html:not(.cf-motion) .story-index-rail,html:not(.cf-motion) .story-progress{display:none!important}
+html:not(.cf-motion) [data-wipe-scene],html:not(.cf-motion) [data-final-machine]{height:100svh!important}
+html:not(.cf-motion) .photo-scene-inner,html:not(.cf-motion) .final-machine-sticky{position:relative!important;height:100svh!important}
+html:not(.cf-motion) .cf-char,html:not(.cf-motion) .cf-line,html:not(.cf-motion) .cf-hero-line,html:not(.cf-motion) [data-machine-part],html:not(.cf-motion) [data-flow-node],html:not(.cf-motion) .hero-subtitle,html:not(.cf-motion) .site-header,html:not(.cf-motion) .scroll-indicator,html:not(.cf-motion) .service-tag,html:not(.cf-motion) .service-number,html:not(.cf-motion) .service-description{translate:none!important;opacity:1!important}
+.cf-sr-text{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.cf-split-content{display:contents}
+.cf-char-mask{display:inline-block;overflow:clip;vertical-align:bottom;line-height:inherit;padding-bottom:.09em;margin-bottom:-.09em}
+.cf-char{display:inline-block;white-space:pre;line-height:inherit;will-change:translate}
+.cf-space{min-width:.25em;white-space:pre}
+.cf-line-mask{display:block;overflow:clip;padding-bottom:.08em;margin-bottom:-.08em;line-height:inherit}
+.cf-line{display:block;white-space:pre-wrap;line-height:inherit;will-change:translate}
+.cf-hero-line-mask{display:block;overflow:clip;padding-bottom:.08em;margin-bottom:-.08em}
+.cf-hero-line{display:block;will-change:translate}
+.cf-motion.motion-ready [data-reveal],.cf-motion.motion-ready [data-reveal].is-visible{opacity:1;transform:none;transition:none}
+.cf-motion.motion-ready .hero [data-hero-line]{opacity:1;transform:none;transition:none}
+.cf-motion .hero-machine [data-machine-part]{will-change:translate,opacity}
+.cf-motion [data-rotor],.cf-motion [data-scroll-rotate],.cf-motion [data-flow-node]{transform-box:fill-box;transform-origin:center;will-change:rotate}
+.cf-motion .hero-curtain{display:flex;position:fixed;inset:0;width:100vw;height:100svh;z-index:50;pointer-events:none;align-items:flex-start;overflow:clip}
+.cf-motion .hero-curtain [data-intro-stripe]{display:block;flex:1 0 0;height:100%;background:var(--paper,#f0efe5);margin:0;will-change:height}
+.cf-motion .hero-curtain [data-intro-stripe]:first-child,.cf-motion .hero-curtain [data-intro-stripe]:last-child{flex:0 0 3vw}
+.cf-intro-complete .hero-curtain{visibility:hidden!important}
+.cf-motion .wipe-mask{position:absolute;inset:0;z-index:4;display:flex;align-items:flex-start;pointer-events:none;overflow:clip}
+.cf-motion [data-wipe-stripe]{display:block;flex:1 0 0;height:100%;background:var(--paper,#f0efe5);will-change:height,translate}
+.cf-motion [data-wipe-stripe]:first-child,.cf-motion [data-wipe-stripe]:last-child{flex:0 0 3vw}
+.cf-motion [data-wipe-extra]{position:absolute;left:0;top:0;width:3vw;flex:none}
+.cf-motion [data-wipe-theme=dark] [data-wipe-stripe]{background:var(--forest-dark,#0c2d22)}
+.cf-motion [data-wipe-image]{will-change:translate;transition:none;transform:none}
+.cf-motion .service-tag{will-change:translate}
+.cf-motion .service-number,.cf-motion .service-description{will-change:opacity}
+.cf-motion .story-track,.cf-motion [data-story-media]{will-change:transform,translate;transition:none}
+.cf-motion .story-sticky{overflow:hidden;overflow:clip}
+.cf-motion .story-section.is-static-story{height:auto!important}
+.cf-motion .is-static-story .story-sticky{position:relative!important;top:auto!important;height:auto!important;overflow:visible}
+.cf-motion .is-static-story .story-track{display:block!important;width:100%!important;margin-left:0!important;transform:none!important}
+.cf-motion .is-static-story .story-panel{width:100%!important;min-width:100%!important;max-width:100%!important}
+.cf-motion .is-static-story .story-index-rail,.cf-motion .is-static-story .story-progress{display:none}
+.cf-motion .site-header{background:transparent!important;border-bottom-color:transparent!important;backdrop-filter:none!important;transition:color .3s}
+.cf-motion .site-header[data-nav-theme=light]{color:var(--cream,#e5e4df)}
+.cf-motion .site-header[data-nav-theme=dark]{color:var(--ink,#26231b)}
+.cf-motion .site-header .header-cta{background:#28271f;color:var(--cream,#e5e4df)}
+.cf-motion [data-flow-path]{will-change:stroke-dashoffset}
+.cf-intro-complete [data-skip-intro],.cf-intro-complete [data-intro-skip]{display:none!important}
+.cf-intro-running [data-skip-intro],.cf-intro-running [data-intro-skip]{z-index:55;position:fixed;right:3vw;bottom:30px;background:#28271f;color:#e5e5df;border:1px solid #e5e5df55;border-radius:30px;padding:10px 20px;line-height:1.4}
+html.lenis{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+.lenis.lenis-scrolling iframe{pointer-events:none}
+@media(max-width:479px){.cf-motion .hero-curtain [data-intro-stripe]:first-child,.cf-motion .hero-curtain [data-intro-stripe]:last-child,.cf-motion [data-wipe-stripe]:first-child,.cf-motion [data-wipe-stripe]:last-child{flex-basis:5vw}.cf-motion [data-wipe-extra]{width:5vw}}
+@media(prefers-reduced-motion:reduce){
+  .cf-motion .hero-curtain,.cf-motion .wipe-mask{display:none!important}
+  .cf-motion .cf-char,.cf-motion .cf-line,.cf-motion .cf-hero-line{translate:none!important;will-change:auto}
+  .cf-motion [data-machine-part],.cf-motion [data-flow-node],.cf-motion .service-description,.cf-motion .service-number,.cf-motion .hero-subtitle,.cf-motion .scroll-indicator{opacity:1!important}
+  .cf-motion [data-machine-part],.cf-motion [data-rotor],.cf-motion [data-scroll-rotate],.cf-motion [data-flow-node],.cf-motion [data-story-media],.cf-motion .service-tag,.cf-motion .site-header,.cf-motion .scroll-indicator{translate:none!important;rotate:none!important;will-change:auto}
+  .cf-motion [data-wipe-scene],.cf-motion [data-final-machine]{height:auto!important}
+  .cf-motion .photo-scene-inner,.cf-motion .final-machine-sticky{position:relative!important;top:auto!important;height:100svh!important}
+  .cf-motion [data-wipe-image]{translate:none!important}
+}
+@media print{
+  .hero-curtain,.wipe-mask{display:none!important}.cf-char,.cf-line,.cf-hero-line{translate:none!important}
+  [data-machine-part],[data-flow-node],.hero-subtitle,.scroll-indicator,.service-number,.service-description{opacity:1!important}
+}
